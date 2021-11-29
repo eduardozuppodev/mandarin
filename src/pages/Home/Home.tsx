@@ -1,9 +1,14 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Title, ButtonStyled } from './styles';
 
 const Home: React.FC = () => {
-  return <Container>Mandarin</Container>;
+  return (
+    <Container>
+      <Title>MANDARIN</Title>
+      <ButtonStyled>INICIAR</ButtonStyled>
+    </Container>
+  );
 };
 
 export default Home;
