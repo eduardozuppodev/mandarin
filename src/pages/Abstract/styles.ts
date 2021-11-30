@@ -11,3 +11,9 @@ export const Container = styled.div`
 `;
 
 export const LoadingPageStyled = styled(LoadingPage)``;
+
+export const Main = styled.div`
+  width: 100%;
+  height: 63%;
+  background: green;
+`;
