@@ -13,22 +13,35 @@ import {
   Title,
   Description,
   ButtonStyled,
-  InfoIconStyled
+  InfoIconStyled,
+  InfoIconFilled,
+  Info,
+  InfoText
 } from './styles';
 
 type Props = {
   loaded: boolean;
   modal: boolean;
   openModal: () => void;
+  info: boolean;
+  openInfo: () => void;
   onClose: () => void;
 };
 
-const Abstract: React.FC<Props> = ({ loaded, modal, openModal, onClose }) => {
+const Abstract: React.FC<Props> = ({
+  loaded,
+  modal,
+  openModal,
+  onClose,
+  openInfo,
+  info
+}) => {
   return (
     <>
       <If condition={!loaded}>
         <LoadingPageStyled />
       </If>
+
       <If condition={loaded}>
         <Container>
           <Header />
@@ -52,10 +65,21 @@ const Abstract: React.FC<Props> = ({ loaded, modal, openModal, onClose }) => {
                   Ipsum.
                 </Description>
                 <ButtonStyled onClick={openModal}>ESTUDO</ButtonStyled>
+
                 <If condition={modal}>
                   <Modal onClose={onClose} />
                 </If>
-                <InfoIconStyled />
+
+                <Info>
+                  {info ? (
+                    <InfoIconFilled onClick={openInfo} />
+                  ) : (
+                    <InfoIconStyled onClick={openInfo} />
+                  )}
+                  <If condition={info}>
+                    <InfoText>O que é Lorem Ipsum?</InfoText>
+                  </If>
+                </Info>
               </WrapperInfo>
             </Content>
             <Next />

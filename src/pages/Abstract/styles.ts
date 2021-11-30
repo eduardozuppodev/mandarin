@@ -2,6 +2,7 @@ import { LoadingPage } from '../../components';
 import styled from 'styled-components';
 import {
   InfoOutlined,
+  InfoRounded,
   KeyboardArrowLeftRounded,
   KeyboardArrowRightRounded
 } from '@material-ui/icons';
@@ -97,10 +98,42 @@ export const InfoIconStyled = styled(InfoOutlined).attrs({
   cursor: pointer;
 `;
 
+export const InfoIconFilled = styled(InfoRounded).attrs({
+  fontSize: 'medium'
+})`
+  color: #fe7500;
+  font-size: 16px;
+  cursor: pointer;
+`;
+
 export const WrapperGraphic = styled.div`
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const Info = styled.div`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+
+  justify-content: flex-start;
+`;
+
+export const InfoText = styled.div`
+  width: 280px;
+  height: 38px;
+  background: #e0e0e033;
+  color: #666666;
+  margin-left: 10px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  font-size: 12px;
+  font-weight: 300;
 `;
