@@ -1,4 +1,4 @@
-import { If, Menu } from '../../components';
+import { If, Menu, SubMenu } from '../../components';
 import React from 'react';
 
 import { LoadingPageStyled, Container } from './styles';
@@ -15,6 +15,7 @@ const Abstract: React.FC<Props> = ({ loaded }) => {
       </If>
       <If condition={loaded}>
         <Container>
+          <SubMenu />
           <Menu />
         </Container>
       </If>

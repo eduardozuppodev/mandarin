@@ -6,7 +6,8 @@ export const Container = styled.div`
   height: 100vh;
 
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
 `;
 
 export const LoadingPageStyled = styled(LoadingPage)``;
