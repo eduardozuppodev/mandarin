@@ -1,4 +1,4 @@
-import { If, Menu, SubMenu, Header } from '../../components';
+import { If, Menu, SubMenu, Header, Graphic, Modal } from '../../components';
 import React from 'react';
 
 import {
@@ -7,14 +7,23 @@ import {
   Main,
   Previous,
   Next,
-  Content
+  Content,
+  WrapperGraphic,
+  WrapperInfo,
+  Title,
+  Description,
+  ButtonStyled,
+  InfoIconStyled
 } from './styles';
 
 type Props = {
   loaded: boolean;
+  modal: boolean;
+  openModal: () => void;
+  onClose: () => void;
 };
 
-const Abstract: React.FC<Props> = ({ loaded }) => {
+const Abstract: React.FC<Props> = ({ loaded, modal, openModal, onClose }) => {
   return (
     <>
       <If condition={!loaded}>
@@ -25,7 +34,30 @@ const Abstract: React.FC<Props> = ({ loaded }) => {
           <Header />
           <Main>
             <Previous />
-            <Content />
+            <Content>
+              <WrapperGraphic>
+                <Graphic />
+              </WrapperGraphic>
+              <WrapperInfo>
+                <Title>O Título do parágrafo</Title>
+                <Description>
+                  Lorem Ipsum é simplesmente uma simulação de texto da indústria
+                  tipográfica e de impressos, e vem sendo utilizado desde o
+                  século XVI, quando um impressor desconhecido pegou uma bandeja
+                  de tipos e os embaralhou para fazer um livro de modelos de
+                  tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como
+                  também ao salto para a editoração eletrônica, permanecendo
+                  essencialmente inalterado. Se popularizou na década de 60,
+                  quando a Letraset lançou decalques contendo passagens de Lorem
+                  Ipsum.
+                </Description>
+                <ButtonStyled onClick={openModal}>ESTUDO</ButtonStyled>
+                <If condition={modal}>
+                  <Modal onClose={onClose} />
+                </If>
+                <InfoIconStyled />
+              </WrapperInfo>
+            </Content>
             <Next />
           </Main>
           <SubMenu />
