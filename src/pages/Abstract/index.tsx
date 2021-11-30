@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Abstract from './Abstract';
 
 const AbstractContainer = () => {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(true);
 
   return <Abstract loaded={loaded} />;
 };
