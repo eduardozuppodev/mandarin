@@ -1,4 +1,12 @@
-import { If, Menu, SubMenu, Header, Graphic, Modal } from '../../components';
+import {
+  If,
+  Menu,
+  SubMenu,
+  Header,
+  Graphic,
+  Modal,
+  Home
+} from '../../components';
 import React from 'react';
 
 import {
@@ -44,6 +52,8 @@ const Abstract: React.FC<Props> = ({
 
       <If condition={loaded}>
         <Container>
+          <Home />
+
           <Header />
           <Main>
             <Previous />
