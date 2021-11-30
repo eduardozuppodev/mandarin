@@ -1,5 +1,18 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { colors } from '../../themes';
+
+type Props = {
+  start: boolean;
+};
+
+const fade = keyframes`
+  0% {
+    bottom: 0px
+  }
+  100%{
+    bottom : 100vh
+  }
+`;
 
 export const Container = styled.div`
   width: 100vw;
@@ -11,6 +24,13 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  position: absolute;
+
+  z-index: 10;
+
+  animation-name: ${(props: Props) => (props.start ? fade : '')};
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
 `;
 
 export const Title = styled.h1`

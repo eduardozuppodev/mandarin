@@ -4,4 +4,5 @@ export * from './If';
 export * from './Menu';
 export * from './Header';
 export * from './Graphic';
+export * from './Home';
 export * from './Modal';
