@@ -1,9 +1,18 @@
+import { If } from 'components/If';
 import React from 'react';
 
-// import { Container } from './styles';
+import { LoadingPageStyled } from './styles';
 
-const Abstract: React.FC = () => {
-  return <div>Resumo</div>;
+type Props = {
+  loaded: boolean;
+};
+
+const Abstract: React.FC<Props> = ({ loaded }) => {
+  return (
+    <If condition={!loaded}>
+      <LoadingPageStyled />
+    </If>
+  );
 };
 
 export default Abstract;
