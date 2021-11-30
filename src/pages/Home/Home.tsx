@@ -2,11 +2,17 @@ import React from 'react';
 
 import { Container, Title, ButtonStyled } from './styles';
 
-const Home: React.FC = () => {
+type Props = {
+  onAbstract: () => void;
+};
+
+const Home: React.FC<Props> = ({ onAbstract }) => {
   return (
     <Container>
       <Title>MANDARIN</Title>
-      <ButtonStyled>INICIAR</ButtonStyled>
+      <ButtonStyled type="button" onClick={onAbstract}>
+        INICIAR
+      </ButtonStyled>
     </Container>
   );
 };
