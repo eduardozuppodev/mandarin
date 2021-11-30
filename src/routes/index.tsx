@@ -1,7 +1,7 @@
 import React from 'react';
 import { GlobalStyles } from '../themes';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Home, Abstract } from '../pages';
+import { Abstract } from '../pages';
 import { Routing } from './routing';
 import { inject, observer } from 'mobx-react';
 
@@ -10,8 +10,7 @@ const RoutesContainer = () => (
     <GlobalStyles />
     <BrowserRouter>
       <Switch>
-        <Route exact path={Routing.HOME} component={Home} />
-        <Route exact path={Routing.ABSTRACT} component={Abstract} />
+        <Route exact path={Routing.HOME} component={Abstract} />
       </Switch>
     </BrowserRouter>
   </>
