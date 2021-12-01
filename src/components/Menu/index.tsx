@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 
 import { Container, Option } from './styles';
 
-export const Menu: React.FC = () => {
-  const [active, setActive] = useState('ABSTRACT');
+type Props = {
+  active: string;
+  setActive: (value: string) => void;
+};
 
+export const Menu: React.FC<Props> = ({ active, setActive }) => {
   return (
     <Container>
       <Option
