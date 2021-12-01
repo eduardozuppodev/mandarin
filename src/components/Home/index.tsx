@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 
 import { Container, Title, ButtonStyled } from './styles';
 
-export const Home: React.FC = ({ ...rest }) => {
+type Props = {
+  animation: string;
+};
+
+export const Home: React.FC<Props> = ({ animation, ...rest }) => {
   const [start, onStart] = useState(false);
 
   return (
-    <Container start={start} {...rest}>
+    <Container
+      animation={start && animation !== 'fadedown' ? 'fadeup' : animation}
+      {...rest}
+    >
       <Title>MANDARIN</Title>
       <ButtonStyled type="button" onClick={() => onStart(true)}>
         INICIAR

@@ -2,15 +2,24 @@ import styled, { keyframes } from 'styled-components';
 import { colors } from '../../themes';
 
 type Props = {
-  start: boolean;
+  animation: string;
 };
 
-const fade = keyframes`
+const fadeup = keyframes`
   0% {
     bottom: 0px
   }
   100%{
     bottom : 100vh
+  }
+`;
+
+const fadedown = keyframes`
+  0% {
+    bottom: 100vh
+  }
+  100%{
+    bottom : 0px
   }
 `;
 
@@ -28,7 +37,12 @@ export const Container = styled.div`
 
   z-index: 10;
 
-  animation-name: ${(props: Props) => (props.start ? fade : '')};
+  animation-name: ${(props: Props) =>
+    props.animation === ''
+      ? ''
+      : props.animation === 'fadeup'
+      ? fadeup
+      : fadedown};
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
 `;
