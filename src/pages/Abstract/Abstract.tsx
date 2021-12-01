@@ -40,6 +40,8 @@ type Props = {
   animation: string;
   setAnimation: (value: string) => void;
   onStart: (value: boolean) => void;
+  setActiveGraph: (value: string) => void;
+  activeGraph: string;
 };
 
 const Abstract: React.FC<Props> = ({
@@ -53,7 +55,8 @@ const Abstract: React.FC<Props> = ({
   setActive,
   setAnimation,
   animation,
-
+  setActiveGraph,
+  activeGraph,
   onStart
 }) => {
   return (
@@ -84,7 +87,10 @@ const Abstract: React.FC<Props> = ({
               />
               <Content>
                 <WrapperGraphic>
-                  <Graphic />
+                  <Graphic
+                    activeGraph={activeGraph}
+                    setActiveGraph={setActiveGraph}
+                  />
                 </WrapperGraphic>
                 <WrapperInfo>
                   <Title>O Título do parágrafo</Title>
@@ -119,7 +125,10 @@ const Abstract: React.FC<Props> = ({
               </Content>
               <Next onClick={() => setActive('MINIBULA')} />
             </Main>
-            <SubMenu />
+            <SubMenu
+              activeGraph={activeGraph}
+              setActiveGraph={setActiveGraph}
+            />
           </If>
           <If condition={active === 'MINIBULA'}>
             <Header title={'MINIBULA'} />

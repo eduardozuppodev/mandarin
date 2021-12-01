@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Abstract from './Abstract';
 
 const AbstractContainer = () => {
+  const [activeGraph, setActiveGraph] = useState('VS');
   const [animation, setAnimation] = useState('');
   const [start, onStart] = useState(false);
   const [loaded, setLoaded] = useState(true);
@@ -27,6 +28,8 @@ const AbstractContainer = () => {
       setAnimation={setAnimation}
       animation={animation}
       onStart={onStart}
+      setActiveGraph={setActiveGraph}
+      activeGraph={activeGraph}
     />
   );
 };

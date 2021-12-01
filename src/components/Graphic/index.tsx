@@ -22,8 +22,12 @@ import {
   Content
 } from './styles';
 
-export const Graphic: React.FC = () => {
-  const [activeGraph, setActiveGraph] = useState('VS');
+type Props = {
+  activeGraph: string;
+  setActiveGraph: (value: string) => void;
+};
+
+export const Graphic: React.FC<Props> = ({ activeGraph, setActiveGraph }) => {
   return (
     <Container>
       <Header>

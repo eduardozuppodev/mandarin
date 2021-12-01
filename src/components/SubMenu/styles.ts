@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors } from 'themes';
 
 type Props = {
-  subActive?: boolean;
+  activeGraph?: boolean;
 };
 
 export const Container = styled.div`
@@ -19,10 +19,10 @@ export const Option = styled.button`
   height: 100%;
   width: 25%;
   border-top: ${(props: Props) =>
-    props.subActive ? '1px solid #fe7500' : 'none'};
+    props.activeGraph ? '1px solid #fe7500' : 'none'};
 
   color: ${colors.main.background};
-  font-weight: ${(props: Props) => (props.subActive ? '700' : '300')};
+  font-weight: ${(props: Props) => (props.activeGraph ? '700' : '300')};
   font-size: 13px;
   cursor: pointer;
   margin: 0 10px;
