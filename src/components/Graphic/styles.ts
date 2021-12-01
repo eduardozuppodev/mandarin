@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 80px;
+  height: 20%;
 
   display: flex;
   align-items: center;
@@ -45,3 +45,12 @@ export const Select = styled.select`
 `;
 
 export const Option = styled.option``;
+
+export const Content = styled.div`
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
