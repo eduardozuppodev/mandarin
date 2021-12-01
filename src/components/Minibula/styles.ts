@@ -15,11 +15,13 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 90%;
+  width: 95%;
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  margin-bottom: 30px;
 `;
 
 export const Description = styled.p`
