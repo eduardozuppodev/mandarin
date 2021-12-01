@@ -5,7 +5,8 @@ import {
   Header,
   Graphic,
   Modal,
-  Home
+  Home,
+  Minibula
 } from '../../components';
 import React from 'react';
 
@@ -34,6 +35,10 @@ type Props = {
   info: boolean;
   openInfo: () => void;
   onClose: () => void;
+  active: string;
+  setActive: (value: string) => void;
+  animation: string;
+  setAnimation: (value: string) => void;
 };
 
 const Abstract: React.FC<Props> = ({
@@ -42,7 +47,11 @@ const Abstract: React.FC<Props> = ({
   openModal,
   onClose,
   openInfo,
-  info
+  info,
+  active,
+  setActive,
+  setAnimation,
+  animation
 }) => {
   return (
     <>
@@ -52,50 +61,60 @@ const Abstract: React.FC<Props> = ({
 
       <If condition={loaded}>
         <Container>
-          <Home />
+          <Home animation={animation} />
 
-          <Header />
-          <Main>
-            <Previous />
-            <Content>
-              <WrapperGraphic>
-                <Graphic />
-              </WrapperGraphic>
-              <WrapperInfo>
-                <Title>O Título do parágrafo</Title>
-                <Description>
-                  Lorem Ipsum é simplesmente uma simulação de texto da indústria
-                  tipográfica e de impressos, e vem sendo utilizado desde o
-                  século XVI, quando um impressor desconhecido pegou uma bandeja
-                  de tipos e os embaralhou para fazer um livro de modelos de
-                  tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como
-                  também ao salto para a editoração eletrônica, permanecendo
-                  essencialmente inalterado. Se popularizou na década de 60,
-                  quando a Letraset lançou decalques contendo passagens de Lorem
-                  Ipsum.
-                </Description>
-                <ButtonStyled onClick={openModal}>ESTUDO</ButtonStyled>
+          <If condition={active === 'ABSTRACT'}>
+            <Header
+              title={'O título é Lorem Ipsum?'}
+              subtitle={'O subtítulo é Lorem Ipsum?'}
+            />
+            <Main>
+              <Previous onClick={() => setAnimation('fadedown')} />
+              <Content>
+                <WrapperGraphic>
+                  <Graphic />
+                </WrapperGraphic>
+                <WrapperInfo>
+                  <Title>O Título do parágrafo</Title>
+                  <Description>
+                    Lorem Ipsum é simplesmente uma simulação de texto da
+                    indústria tipográfica e de impressos, e vem sendo utilizado
+                    desde o século XVI, quando um impressor desconhecido pegou
+                    uma bandeja de tipos e os embaralhou para fazer um livro de
+                    modelos de tipos. Lorem Ipsum sobreviveu não só a cinco
+                    séculos, como também ao salto para a editoração eletrônica,
+                    permanecendo essencialmente inalterado. Se popularizou na
+                    década de 60, quando a Letraset lançou decalques contendo
+                    passagens de Lorem Ipsum.
+                  </Description>
+                  <ButtonStyled onClick={openModal}>ESTUDO</ButtonStyled>
 
-                <If condition={modal}>
-                  <Modal onClose={onClose} />
-                </If>
-
-                <Info>
-                  {info ? (
-                    <InfoIconFilled onClick={openInfo} />
-                  ) : (
-                    <InfoIconStyled onClick={openInfo} />
-                  )}
-                  <If condition={info}>
-                    <InfoText>O que é Lorem Ipsum?</InfoText>
+                  <If condition={modal}>
+                    <Modal onClose={onClose} />
                   </If>
-                </Info>
-              </WrapperInfo>
-            </Content>
-            <Next />
-          </Main>
-          <SubMenu />
-          <Menu />
+
+                  <Info>
+                    {info ? (
+                      <InfoIconFilled onClick={openInfo} />
+                    ) : (
+                      <InfoIconStyled onClick={openInfo} />
+                    )}
+                    <If condition={info}>
+                      <InfoText>O que é Lorem Ipsum?</InfoText>
+                    </If>
+                  </Info>
+                </WrapperInfo>
+              </Content>
+              <Next onClick={() => setActive('MINIBULA')} />
+            </Main>
+            <SubMenu />
+          </If>
+          <If condition={active === 'MINIBULA'}>
+            <Header title={'MINIBULA'} />
+            <Minibula previous={() => setActive('ABSTRACT')} />
+          </If>
+
+          <Menu active={active} setActive={setActive} />
         </Container>
       </If>
     </>

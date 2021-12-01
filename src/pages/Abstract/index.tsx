@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import Abstract from './Abstract';
 
 const AbstractContainer = () => {
+  const [animation, setAnimation] = useState('');
   const [loaded, setLoaded] = useState(true);
   const [modal, setModal] = useState(false);
   const [info, setInfo] = useState(false);
+  const [active, setActive] = useState('ABSTRACT');
 
   const openModal = () => setModal(true);
   const onClose = () => setModal(false);
@@ -19,6 +21,10 @@ const AbstractContainer = () => {
       onClose={onClose}
       openInfo={openInfo}
       info={info}
+      active={active}
+      setActive={setActive}
+      setAnimation={setAnimation}
+      animation={animation}
     />
   );
 };
