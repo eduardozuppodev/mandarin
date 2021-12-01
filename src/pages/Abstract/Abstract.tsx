@@ -39,6 +39,7 @@ type Props = {
   setActive: (value: string) => void;
   animation: string;
   setAnimation: (value: string) => void;
+  onStart: (value: boolean) => void;
 };
 
 const Abstract: React.FC<Props> = ({
@@ -51,7 +52,9 @@ const Abstract: React.FC<Props> = ({
   active,
   setActive,
   setAnimation,
-  animation
+  animation,
+
+  onStart
 }) => {
   return (
     <>
@@ -61,7 +64,11 @@ const Abstract: React.FC<Props> = ({
 
       <If condition={loaded}>
         <Container>
-          <Home animation={animation} />
+          <Home
+            setAnimation={setAnimation}
+            onStart={onStart}
+            animation={animation}
+          />
 
           <If condition={active === 'ABSTRACT'}>
             <Header
@@ -69,7 +76,12 @@ const Abstract: React.FC<Props> = ({
               subtitle={'O subtítulo é Lorem Ipsum?'}
             />
             <Main>
-              <Previous onClick={() => setAnimation('fadedown')} />
+              <Previous
+                onClick={() => {
+                  setAnimation('fadedown');
+                  onStart(false);
+                }}
+              />
               <Content>
                 <WrapperGraphic>
                   <Graphic />

@@ -4,6 +4,7 @@ import Abstract from './Abstract';
 
 const AbstractContainer = () => {
   const [animation, setAnimation] = useState('');
+  const [start, onStart] = useState(false);
   const [loaded, setLoaded] = useState(true);
   const [modal, setModal] = useState(false);
   const [info, setInfo] = useState(false);
@@ -25,6 +26,7 @@ const AbstractContainer = () => {
       setActive={setActive}
       setAnimation={setAnimation}
       animation={animation}
+      onStart={onStart}
     />
   );
 };
