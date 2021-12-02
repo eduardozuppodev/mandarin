@@ -34,6 +34,9 @@ export const Description = styled.p`
   text-align: justify;
   font-size: ${pxToRem(19)};
   padding: ${pxToRem(10)} ${pxToRem(100)};
+
+  @media (max-width: ${pxToRem(728)}) {
+    padding: ${pxToRem(10)} ${pxToRem(20)} ;
 `;
 
 export const Previous = styled(KeyboardArrowLeftRounded).attrs({

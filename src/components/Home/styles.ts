@@ -53,6 +53,10 @@ export const Title = styled.h1`
   padding-top: ${pxToRem(200)};
   font-size: ${pxToRem(100)};
   font-weight: 600;
+
+  @media (max-width: ${pxToRem(728)}) {
+    font-size: ${pxToRem(60)};
+  } ;
 `;
 
 export const ButtonStyled = styled.button`

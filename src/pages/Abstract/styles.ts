@@ -50,6 +50,12 @@ export const Content = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: ${pxToRem(728)}) {
+    flex-direction: column;
+    overflow: scroll;
+    width: 100%;
+  } ;
 `;
 
 export const WrapperInfo = styled.div`
@@ -60,6 +66,11 @@ export const WrapperInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: ${pxToRem(728)}) {
+    width: 100%;
+    height: auto;
+  } ;
 `;
 
 export const Title = styled.h1`
@@ -76,6 +87,10 @@ export const Description = styled.p`
   text-align: justify;
   font-size: ${pxToRem(16)};
   padding: ${pxToRem(20)} 0;
+
+  @media (max-width: ${pxToRem(728)}) {
+    width: 100%;
+  } ;
 `;
 
 export const ButtonStyled = styled.button`
@@ -90,6 +105,10 @@ export const ButtonStyled = styled.button`
   font-size: ${pxToRem(16)};
   cursor: pointer;
   margin-bottom: ${pxToRem(20)};
+
+  @media (max-width: ${pxToRem(728)}) {
+    height: ${pxToRem(60)};
+  } ;
 `;
 
 export const InfoIconStyled = styled(InfoOutlined).attrs({
@@ -114,6 +133,11 @@ export const WrapperGraphic = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${pxToRem(728)}) {
+    width: 100%;
+    margin-bottom: ${pxToRem(20)};
+  } ;
 `;
 
 export const Info = styled.div`
