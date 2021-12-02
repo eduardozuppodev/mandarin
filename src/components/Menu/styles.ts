@@ -22,8 +22,8 @@ export const Option = styled.button`
   background: ${(props: Props) =>
     props.active ? `${colors.main.secondary}` : 'none'};
   border-radius: ${pxToRem(4)};
-  border: ${(props: Props) =>
-    props.active ? '0' : '${pxToRem(1)} solid ${colors.main.secondary}'};
+  border: ${(props: Props) => (props.active ? '0' : '1px solid #fff')};
+
   color: ${(props: Props) =>
     props.active ? colors.main.background : `${colors.main.secondary}`};
   font-weight: 700;
