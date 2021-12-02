@@ -23,6 +23,10 @@ export const CloseBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media (max-width: ${pxToRem(728)}) {
+    width: 100%;
+  }
 `;
 
 export const WrapperClose = styled.div`
@@ -33,6 +37,10 @@ export const WrapperClose = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: ${pxToRem(4)};
+
+  @media (max-width: ${pxToRem(728)}) {
+    margin-right: ${pxToRem(10)};
+  }
 `;
 
 export const CloseIcon = styled(Close)`
@@ -47,6 +55,12 @@ export const WrapperContent = styled.div`
   background: ${colors.main.secondary};
 
   padding: ${pxToRem(40)};
+
+  @media (max-width: ${pxToRem(728)}) {
+    width: 100%;
+    height: auto;
+    overflow: scroll;
+  }
 `;
 
 export const Content = styled.p`
