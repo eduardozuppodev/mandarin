@@ -20,9 +20,7 @@ export const Option = styled.button`
   height: 100%;
   width: 25%;
   border-top: ${(props: Props) =>
-    props.activeGraph
-      ? '${pxToRem(1)} solid ${colors.main.background'
-      : 'none'};
+    props.activeGraph ? '1px solid #fe7500' : 'none'};
 
   color: ${colors.main.background};
   font-weight: ${(props: Props) => (props.activeGraph ? '700' : '300')};
