@@ -1,5 +1,7 @@
 import { KeyboardArrowLeftRounded } from '@material-ui/icons';
 import styled from 'styled-components';
+import { colors } from 'themes';
+import { pxToRem } from 'utils/helpers';
 
 export const Container = styled.div`
   width: 100%;
@@ -11,7 +13,7 @@ export const Container = styled.div`
 
   overflow: scroll;
 
-  margin-bottom: 20px;
+  margin-bottom: ${pxToRem(20)};
 `;
 
 export const Content = styled.div`
@@ -21,23 +23,23 @@ export const Content = styled.div`
   flex-direction: row;
   align-items: center;
 
-  margin-bottom: 30px;
+  margin-bottom: ${pxToRem(30)};
 `;
 
 export const Description = styled.p`
-  color: #666666;
+  color: ${colors.main.grey};
 
   font-weight: 200;
   line-height: 1.5;
   text-align: justify;
-  font-size: 19px;
-  padding: 10px 100px;
+  font-size: ${pxToRem(19)};
+  padding: ${pxToRem(10)} ${pxToRem(100)};
 `;
 
 export const Previous = styled(KeyboardArrowLeftRounded).attrs({
   fontSize: 'large'
 })`
-  color: #fe7500;
+  color: ${colors.main.background};
   width: 10%;
   cursor: pointer;
 `;

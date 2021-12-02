@@ -6,6 +6,8 @@ import {
   KeyboardArrowLeftRounded,
   KeyboardArrowRightRounded
 } from '@material-ui/icons';
+import { colors } from 'themes';
+import { pxToRem } from 'utils/helpers';
 
 export const Container = styled.div`
   width: 100vw;
@@ -30,7 +32,7 @@ export const Main = styled.div`
 export const Previous = styled(KeyboardArrowLeftRounded).attrs({
   fontSize: 'large'
 })`
-  color: #fe7500;
+  color: ${colors.main.background};
   width: 10%;
   cursor: pointer;
 `;
@@ -38,7 +40,7 @@ export const Previous = styled(KeyboardArrowLeftRounded).attrs({
 export const Next = styled(KeyboardArrowRightRounded).attrs({
   fontSize: 'large'
 })`
-  color: #fe7500;
+  color: ${colors.main.background};
   width: 10%;
   cursor: pointer;
 `;
@@ -54,55 +56,55 @@ export const WrapperInfo = styled.div`
   width: 50%;
   height: 95%;
 
-  padding: 0 50px;
+  padding: 0 ${pxToRem(50)};
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
 export const Title = styled.h1`
-  color: #666666;
+  color: ${colors.main.grey};
   font-weight: 300;
-  font-size: 24px;
+  font-size: ${pxToRem(24)};
 `;
 
 export const Description = styled.p`
-  color: #666666;
+  color: ${colors.main.grey};
   width: 80%;
   font-weight: 200;
   line-height: 1.5;
   text-align: justify;
-  font-size: 16px;
-  padding: 20px 0;
+  font-size: ${pxToRem(16)};
+  padding: ${pxToRem(20)} 0;
 `;
 
 export const ButtonStyled = styled.button`
-  width: 128px;
-  height: 48px;
-  background: #fe7500;
-  border-radius: 4px;
+  width: ${pxToRem(128)};
+  height: ${pxToRem(48)};
+  background: ${colors.main.background};
+  border-radius: ${pxToRem(4)};
   border: 0;
 
-  color: #fff;
+  color: ${colors.main.secondary};
   font-weight: 500;
-  font-size: 16px;
+  font-size: ${pxToRem(16)};
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: ${pxToRem(20)};
 `;
 
 export const InfoIconStyled = styled(InfoOutlined).attrs({
   fontSize: 'medium'
 })`
-  color: #fe7500;
-  font-size: 16px;
+  color: ${colors.main.background};
+  font-size: ${pxToRem(16)};
   cursor: pointer;
 `;
 
 export const InfoIconFilled = styled(InfoRounded).attrs({
   fontSize: 'medium'
 })`
-  color: #fe7500;
-  font-size: 16px;
+  color: ${colors.main.background};
+  font-size: ${pxToRem(16)};
   cursor: pointer;
 `;
 
@@ -116,7 +118,7 @@ export const WrapperGraphic = styled.div`
 
 export const Info = styled.div`
   width: 100%;
-  height: 40px;
+  height: ${pxToRem(40)};
   display: flex;
   align-items: center;
 
@@ -124,16 +126,16 @@ export const Info = styled.div`
 `;
 
 export const InfoText = styled.div`
-  width: 280px;
-  height: 38px;
-  background: #e0e0e033;
-  color: #666666;
-  margin-left: 10px;
-  padding-left: 10px;
+  width: ${pxToRem(280)};
+  height: ${pxToRem(38)};
+  background: ${colors.secondary.grey};
+  color: ${colors.main.grey};
+  margin-left: ${pxToRem(10)};
+  padding-left: ${pxToRem(10)};
   display: flex;
   align-items: center;
   justify-content: flex-start;
 
-  font-size: 12px;
+  font-size: ${pxToRem(12)};
   font-weight: 300;
 `;

@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import { Close } from '@material-ui/icons';
+import { colors } from 'themes';
+import { pxToRem } from 'utils/helpers';
 
 export const Container = styled.div`
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${colors.modal.background};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,42 +19,42 @@ export const Container = styled.div`
 `;
 
 export const CloseBar = styled.div`
-  width: 858px;
+  width: ${pxToRem(858)};
   display: flex;
   align-items: center;
   justify-content: flex-end;
 `;
 
 export const WrapperClose = styled.div`
-  width: 38px;
-  height: 38px;
-  background: #fe7500;
+  width: ${pxToRem(38)};
+  height: ${pxToRem(38)};
+  background: ${colors.main.background};
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: ${pxToRem(4)};
 `;
 
 export const CloseIcon = styled(Close)`
-  color: #fff;
+  color: ${colors.main.secondary};
 `;
 
 export const WrapperContent = styled.div`
-  margin-top: 15px;
-  width: 858px;
-  height: 382px;
-  border-radius: 4px;
-  background: #fff;
+  margin-top: ${pxToRem(15)};
+  width: ${pxToRem(858)};
+  height: ${pxToRem(382)};
+  border-radius: ${pxToRem(4)};
+  background: ${colors.main.secondary};
 
-  padding: 40px;
+  padding: ${pxToRem(40)};
 `;
 
 export const Content = styled.p`
   text-align: justify;
-  margin-top: 15px;
-  color: #666666;
+  margin-top: ${pxToRem(15)};
+  color: ${colors.main.grey};
   font-weight: 200;
   line-height: 1.5;
   text-align: justify;
-  font-size: 14px;
+  font-size: ${pxToRem(14)};
 `;

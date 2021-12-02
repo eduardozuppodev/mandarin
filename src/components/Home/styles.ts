@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { pxToRem } from 'utils/helpers';
 import { colors } from '../../themes';
 
 type Props = {
@@ -7,7 +8,7 @@ type Props = {
 
 const fadeup = keyframes`
   0% {
-    bottom: 0px
+    bottom: ${pxToRem(0)}
   }
   100%{
     bottom : 100vh
@@ -19,7 +20,7 @@ const fadedown = keyframes`
     bottom: 100vh
   }
   100%{
-    bottom : 0px
+    bottom : ${pxToRem(0)}
   }
 `;
 
@@ -48,21 +49,21 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #fff;
-  padding-top: 200px;
-  font-size: 100px;
+  color: ${colors.main.secondary};
+  padding-top: ${pxToRem(200)};
+  font-size: ${pxToRem(100)};
   font-weight: 600;
 `;
 
 export const ButtonStyled = styled.button`
-  width: 128px;
-  height: 48px;
-  background: #fff;
-  border-radius: 4px;
+  width: ${pxToRem(128)};
+  height: ${pxToRem(48)};
+  background: ${colors.main.secondary};
+  border-radius: ${pxToRem(4)};
   border: 0;
 
-  color: #fe7500;
+  color: ${colors.main.background};
   font-weight: 500;
-  font-size: 16px;
+  font-size: ${pxToRem(16)};
   cursor: pointer;
 `;

@@ -18,7 +18,7 @@ export const Loading = styled(ReactLoading).attrs({
   width: 75,
   height: 75,
   type: 'spinningBubbles',
-  color: '#fff'
+  color: `${colors.main.secondary}`
 })`
   overflow: hidden;
 `;

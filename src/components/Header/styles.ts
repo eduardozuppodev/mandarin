@@ -1,10 +1,12 @@
 import { Typography } from '@material-ui/core';
 import styled from 'styled-components';
+import { colors } from 'themes';
+import { pxToRem } from 'utils/helpers';
 
 export const Container = styled.div`
   width: 100%;
   height: 20%;
-  padding: 0 100px;
+  padding: 0 ${pxToRem(100)};
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,15 +20,15 @@ export const TextWrapper = styled.div`
 export const Title = styled(Typography).attrs({
   variant: 'h3'
 })`
-  color: #fe7500;
+  color: ${colors.main.background};
 `;
 
 export const SubTitle = styled(Typography).attrs({
   variant: 'h5'
 })`
-  color: #666666;
+  color: ${colors.main.grey};
 `;
 
 export const Logo = styled.img`
-  width: 120px;
+  width: ${pxToRem(120)};
 `;

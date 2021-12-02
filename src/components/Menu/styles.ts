@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from 'themes';
+import { pxToRem } from 'utils/helpers';
 
 type Props = {
   active?: boolean;
@@ -12,19 +13,21 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 100px;
+  padding: 0 ${pxToRem(100)};
 `;
 
 export const Option = styled.button`
-  width: 128px;
-  height: 48px;
-  background: ${(props: Props) => (props.active ? '#fff' : 'none')};
-  border-radius: 4px;
-  border: ${(props: Props) => (props.active ? '0' : '1px solid #fff')};
-
-  color: ${(props: Props) => (props.active ? colors.main.background : '#fff')};
+  width: ${pxToRem(128)};
+  height: ${pxToRem(48)};
+  background: ${(props: Props) =>
+    props.active ? `${colors.main.secondary}` : 'none'};
+  border-radius: ${pxToRem(4)};
+  border: ${(props: Props) =>
+    props.active ? '0' : '${pxToRem(1)} solid ${colors.main.secondary}'};
+  color: ${(props: Props) =>
+    props.active ? colors.main.background : `${colors.main.secondary}`};
   font-weight: 700;
-  font-size: 13px;
+  font-size: ${pxToRem(13)};
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 ${pxToRem(10)};
 `;

@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { colors } from 'themes';
+import { pxToRem } from 'utils/helpers';
 
 export const Container = styled.div`
-  width: 493px;
-  height: 433px;
-  border: 2px solid #ffeedc;
-  border-radius: 4px;
+  width: ${pxToRem(493)};
+  height: ${pxToRem(433)};
+  border: ${pxToRem(2)} solid ${colors.main.orange};
+  border-radius: ${pxToRem(4)};
 `;
 
 export const Header = styled.div`
@@ -18,29 +20,29 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #fe7500;
+  color: ${colors.main.background};
   font-weight: 500;
-  font-size: 24px;
+  font-size: ${pxToRem(24)};
 `;
 
 export const Span = styled.span`
-  margin: 0 10px;
-  color: #666666;
+  margin: 0 ${pxToRem(10)};
+  color: ${colors.main.grey};
   font-weight: 100;
-  font-size: 24px;
+  font-size: ${pxToRem(24)};
 `;
 
 export const Select = styled.select`
   border: 0;
-  width: 200px;
+  width: ${pxToRem(200)};
   height: 50%;
   position: relative;
   float: left;
   font-family: 'Roboto';
   font-weight: 100;
-  font-size: 18px;
-  color: #666666;
-  background: #ffeedc;
+  font-size: ${pxToRem(18)};
+  color: ${colors.main.grey};
+  background: ${colors.main.orange};
   border: none;
 `;
 
